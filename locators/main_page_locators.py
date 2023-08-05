@@ -12,3 +12,4 @@ class MainPageLocators:
     SAMOKAT_LOGO = By.XPATH, "//a[contains(@class,'Header_LogoScooter')]"
     YANDEX_LOGO = By.XPATH, "//a[contains(@class,'Header_LogoYandex')]"
     COOKIE_BUTTON = By.XPATH, "//button[contains(@class,'App_CookieButton') and text()='да все привыкли']"
+    YANDEX_MAIN_PAGE_LOGO = By.XPATH, "//div[@class='headline']/a[contains(@class, 'headline__logo')]"

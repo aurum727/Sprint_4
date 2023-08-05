@@ -1,7 +1,6 @@
 import allure
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
-from urls import AdressSite
 
 
 class BasePage:
@@ -9,7 +8,6 @@ class BasePage:
     @allure.step('Загружаем главную страницу сайта Самокат')
     def __init__(self,driver):
         self.driver = driver
-        self.driver.get(AdressSite.main_page)
 
     @allure.step('Нажимаем на элемент с локатором {element_locator}')
     def click_on_element(self, element_locator):

@@ -3,12 +3,14 @@ from locators.order_page_locators import OrderPageLocators
 from pages.base_page import BasePage
 from selenium.webdriver.common.keys import Keys
 import allure
+from urls import AdressSite
 
 
 class OrderPage(BasePage):
 
     @allure.step('Ожидаем загрузки главной страницы до появления кликабельной кнопки "Заказать"')
     def wait_for_load_main_page(self):
+        self.driver.get(AdressSite.main_page)
         self.wait_for_clickable_element(MainPageLocators.HOME_ORDER_KEY)
 
     @allure.step('Заполяем форму "Для кого самокат" данными из списка {for_whom_data_list}')
@@ -41,5 +43,11 @@ class OrderPage(BasePage):
         self.click_on_element(color)
 
         self.set_text_to_field(OrderPageLocators.COMMENT_FIELD, about_order_list[3])
+
+    def cookie_pass(self):
+        try:
+            self.driver.find_element(*MainPageLocators.COOKIE_BUTTON).click()
+        except:
+            pass
 
 
